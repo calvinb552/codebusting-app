@@ -18,12 +18,13 @@ class _listTestState extends State<listTest> {
   chiphertext.clear(); // clear list in case of leftover from last code
   Random random = Random();
   
-  while (letters.isNotEmpty) {
+  while (lettersCopy.isNotEmpty) {
     // Get a random index from the letters list
-    int randomIndex = random.nextInt(letters.length);
-    chiphertext.add(lettersCopy.removeAt(randomIndex));
+    if (lettersCopy.isNotEmpty) {
+      int randomIndex = random.nextInt(lettersCopy.length);
+      chiphertext.add(lettersCopy.removeAt(randomIndex));
   }
-
+  }
   //update UI
   setState((){});
   }
